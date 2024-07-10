@@ -11,15 +11,15 @@ def encrypt(plain_text,shift_amount):
         new_position =position+shift_amount
         new_letter =alphabet[new_position]
         cipher_text +=new_letter
-        print(f"The encoding text is :{cipher_text}")
+    print(f"The encoding text is :{cipher_text}")    
         
 def decrypt(cipher_text,shift_amount):
     plain_text = ""
     for letter in cipher_text:
-     position=alphabet.index(letter)
-     new_position = position - shift_amount
-     plain_text += alphabet[new_position]
-     print(f"The decoded code is : {plain_text}")
+        position=alphabet.index(letter)
+        new_position = position - shift_amount
+        plain_text += alphabet[new_position]
+    print(f"The decoded code is : {plain_text}")
      
   
 if direction =="encode":   
