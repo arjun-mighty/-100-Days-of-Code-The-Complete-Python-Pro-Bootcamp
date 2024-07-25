@@ -1,0 +1,36 @@
+//main.py
+
+PLACEHOLDER = "[name]"
+
+with open("./Input/Names/invited_names.txt") as names_file: #ikda relative path vaadam
+    names = names_file.readlines()
+    print(names)
+
+with open("./Input/Letters/starting_letter.txt") as letters:
+    let = letters.read()
+    for name in names:
+        stripped_name = name.strip()
+        new_letter = let.replace(PLACEHOLDER, stripped_name)
+        with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt",mode="w") as completed_letter:
+            completed_letter.write(new_letter)
+
+        # print(new_letter)
+
+//Invitednames.txt
+
+Aankutti
+Penkutti
+Kuttan
+Chingkhie
+Gopi
+Vivek
+Arjun
+
+//Templates
+Dear [name],
+
+You are invited to my birthday this Saturday.
+
+Hope you can make it!
+
+Arjun
