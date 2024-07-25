@@ -1,0 +1,8 @@
+# with open("tempfile.txt") as file:
+#     contents = file.read()
+#     print(contents)
+#     file.close()
+#
+
+with open("tempfile.txt",mode="a") as file:
+    file.write("\n Iam Arjun")
