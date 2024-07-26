@@ -1,0 +1,35 @@
+
+#here we are opening our csv file with relative path and printing them in list.
+# with open("weather_data.csv") as data_file:
+#     data = data_file.readlines()
+#     print(data)
+
+# the above list is lil bit messy so we have a better approach i.e importing csv libraray.
+
+# import csv
+# with open("weather_data.csv") as data_file:
+#     data = csv.reader(data_file) #this will form a csv object
+#     temperatures = []
+#     for row in data:
+#         if row[1]!="temp":
+#             temperatures.append(int(row[1]))
+#     print(temperatures)
+
+import pandas
+data = pandas.read_csv("weather_data.csv")
+# # print(data)
+# print(data["temp"])
+
+data_dict = data.to_dict()
+print(data_dict)
+
+temp_list = data["temp"].to_list()
+print(len(temp_list))
+# print(type(data))
+
+average = sum(temp_list)/len(temp_list)
+print(average)
+
+print(data["temp"].max())
+print(data["temp"].mean())
+
