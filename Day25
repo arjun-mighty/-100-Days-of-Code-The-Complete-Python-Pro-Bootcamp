@@ -1,0 +1,76 @@
+#
+
+#here we are opening our csv file with relative path and printing them in list.
+# with open("weather_data.csv") as data_file:
+#     data = data_file.readlines()
+#     print(data)
+
+# the above list is lil bit messy so we have a better approach i.e importing csv libraray.
+
+# import csv
+# with open("weather_data.csv") as data_file:
+#     data = csv.reader(data_file) #this will form a csv object
+#     temperatures = []
+#     for row in data:
+#         if row[1]!="temp":
+#             temperatures.append(int(row[1]))
+#     print(temperatures)
+
+import pandas
+data = pandas.read_csv("weather_data.csv")
+# # # print(data)
+# # print(data["temp"])
+#
+# data_dict = data.to_dict()
+# print(data_dict)
+#
+# temp_list = data["temp"].to_list()
+# print(len(temp_list))
+# # print(type(data))
+#
+# average = sum(temp_list)/len(temp_list)
+# print(average)
+#
+# print(data["temp"].max())
+# print(data["temp"].mean())
+# print(data["temp"].min())
+# # print(data["condition"])
+# # printing whole column
+# print(data.condition)
+#
+# # # Get data in a row
+# print(data[data.day=="Monday"])
+# #getting highest temp from the csv file
+# print(data[data.temp ==data.temp.max()])
+#
+# # # creating a dataframe
+# monday = data[data.day == "Monday"]
+# monday_temp = monday.temp[0]
+# monday_tempf = monday_temp*9/5+32
+# print(monday_tempf)
+#
+# print(monday.condition)
+#
+# wednesday = data[data.day =="Wednesday"]
+# print(wednesday.condition)
+#
+
+# Creating a dataframe from A Dictionary
+# data_dict = {
+#     "Students":["Alex","Aiden","Arjun","Aankutti","Penkutti"],
+#     "scores":[92,91,95,98,95]
+# }
+# # here we use pandas libraray and initialize that class with data i.e data_dict
+# data = pandas.DataFrame(data_dict) #this creates a tabular data
+# print(data)
+# # we can actually convert data to a csv file using tocsv("filename")
+# data.to_csv("new_data.csv")
+
+
+import pandas
+
+data = pandas.read_csv("2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv")
+print(data)
+
+grey_Sqrls = len(data[data["Primary Fur Color"] == "Gray"])
+print(grey_Sqrls)
