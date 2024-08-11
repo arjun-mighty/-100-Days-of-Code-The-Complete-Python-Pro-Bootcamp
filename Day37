@@ -1,5 +1,5 @@
 #Day37
-
+#Stock trading news alert
 import requests
 from twilio.rest import Client
 
